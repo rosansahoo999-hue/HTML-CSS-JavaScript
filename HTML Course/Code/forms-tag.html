@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms  Tag</title>
+</head>
+<body>
+    <section>
+    <form>
+        Text: <input type="text" placeholder="Enter the text" name="text" required><br>
+        Email: <input type="text" value="default@gmail.com"><br>
+        Password: <input type="password" >
+    </form>
+    </section>
+    <br>
+    <br>
+    <section>
+        <form action="/submit.php" method="post">
+            <label for="username">Username: </label>
+            <input type="text" name="name" required id="username">
+            <input type="submit" value="submit">
+        </form>
+    </section>
+    <br>
+    <section>
+        <form action="">
+            <label for="color">Color:- </label>
+            <input type="color" name="color" id="color">
+            <br>
+            <label for="text">Text:- </label>
+            <input type="text" name="text" id="text" placeholder="Enter the text" required>
+            <br>
+            <label for="password">Password:- </label>
+            <input type="password" name="password" id="password">
+            <br>
+            <label for="date">Date:- </label>
+            <input type="date" name="date" id="date">
+            <br>
+            <label for="">File:- </label>
+            <input type="file" name="file" id="file">
+            <br>
+            <label for="range">Range:- </label>
+            <input type="range" name="range" id="range">
+            <br>
+            Button:- <input type="button" value="Click Me">
+            <br>
+            Submit:- <input type="submit" value="submit">
+        </form>
+    </section>
+    <br><br>
+    <section>
+        <form action="">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male">
+        <br>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female">
+        <br>
+        <label for="other">Other</label>
+        <input type="radio" name="gender" id="other">
+        </form>
+    </section>
+    <br>
+    <section>
+        <form action="">
+        <label for="apple">Apple</label>
+        <input type="checkbox" name="fruits" id="apple" value="Apple">
+        <br>
+        <label for="banana">Banana</label>
+        <input type="checkbox" name="fruits" id="banana" value="Banana">
+        <br>
+        <label for="cherry">Cherry</label>
+        <input type="checkbox" name="fruits" id="cherry" value="Cherry">
+        </form>
+    </section>
+    <br>
+    <section>
+        <form action="">
+            <label for="fruits">Choose a fruits:- </label>
+            <select name="fruits" id="fruits">
+                <option value="apple">Apple</option>
+                <option value="banana">Banana</option>
+                <option value="cherry">Cherry</option>
+            </select>
+            <br>
+            <textarea rows="4" cols="40">
+                default text here.
+            </textarea>
+        </form>
+    </section>
+</body>
+</html>

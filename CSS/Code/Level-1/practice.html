@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice Set 1</title>
+    <style>
+#heading {
+    color: blue; /* ye external se ayega but inline isko override karega */
+}
+/* This is a comment - CSS me comment aise likhte hai */
+
+/* 3. Comment in CSS class - ye class niche use hui hai */
+.myClass {
+    /* paragraph ka color */
+    color: orange;
+    font-weight: bold;
+}
+
+/* External CSS for id heading */
+#heading {
+    color: purple;
+    font-size: 20px;
+}
+
+/* 4. ID Selector */
+#myDiv {
+    color: teal;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+/* Element Selector */
+h2 {
+    color: brown;
+}
+
+/* 5. Group Selector - dono id ka color ek sath */
+#first, #second {
+    color: white;
+    background-color: black;
+    margin: 10px;
+    padding: 10px;
+}
+    </style>
+</head>
+<body>
+
+    <!-- 1. Heading red color -->
+    <h1 style="color: red;">This is Red Heading</h1>
+
+    <!-- 2. Div with id heading - 3 ways CSS priority check -->
+    <!-- Priority: Inline > Internal (style tag) > External -->
+    <div id="heading" style="color: green;">
+        This div has id="heading" - Color will be GREEN because Inline has highest priority
+    </div>
+
+    <hr>
+
+    <!-- 4. div, p, heading with id, element, class selector -->
+    <div id="myDiv">This is div - styled by ID selector #myDiv</div>
+    
+    <p class="myClass">This is paragraph - styled by CLASS selector .myClass</p>
+    
+    <h2>This is h2 heading - styled by ELEMENT selector h2</h2>
+
+    <hr>
+
+    <!-- 5. Two divs with group selector -->
+    <div id="first">This is First Div</div>
+    <div id="second">This is Second Div</div>
+
+</body>
+</html>

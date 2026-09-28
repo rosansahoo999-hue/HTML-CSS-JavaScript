@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /* 1. Main content color change */
+    .main-content {
+        color: #333;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    /* 2. Div bar with text and background color with opacity */
+    .div-bar {
+        background-color: rgba(0, 123, 255, 0.6); /* blue with 0.6 opacity */
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* 3 & 4. Div with background image + background shorthand property */
+    .image-div {
+        /* background shorthand: color image repeat attachment position / size */
+        background: url('https://picsum.photos/800/300') no-repeat center center / cover;
+        height: 250px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+    <div class="div-bar">
+        This is a Div Bar with Opacity Background
+    </div>
+
+    <div class="main-content">
+        <h2>Main Content</h2>
+        <p>This is the main content and its text color is changed using CSS.</p>
+    </div>
+
+    <div class="image-div">
+        This Div Has Background Image
+    </div>
+
+</body>
+</html>

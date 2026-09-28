@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>function_parameter</title>
+</head>
+<body>
+    <script>
+        function sum(a, b){
+            let sum = a + b;
+            return sum;
+        }
+        
+        console.log(sum(4, 6));
+        console.log(sum(41, 55));
+        console.log(sum(0, 0));
+        console.log(sum(1, -1));
+        console.log(sum(6, 9.8));
+
+        // function sum(a, b) {
+        //     let sum = a - b;
+        //     return sum;
+        // }
+
+        // num = sum(72, 60)
+        // console.log(num)
+
+        function greeting(name = 'pyaare') {
+            console.log(`Namaste ${name} uncle`)
+        }
+
+        greeting();
+        greeting('Titu');
+    </script>
+</body>
+</html>

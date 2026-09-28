@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exercise</title>
+</head>
+<body>
+    <h1 id="name-display"></h1>
+    <p id="cart-amount"></p>
+    <p id="evl-value"></p>
+    
+    <script>
+        const myName = 'Rosan Sahoo';
+        document.querySelector('#name-display').innerText = myName;
+        const gstPercentage = 18;
+        let cartValue = Math.round(((15599 - (10/100 * 15599)) - 272 + (2499 - (41/100 * 2499)) - 29 + 20 + 25) * (100 + gstPercentage) / 100);
+        document.querySelector('#cart-amount').innerText = `Cart Amount = ${cartValue}`;
+
+        let evl = eval('2+3+5*7-9');
+        document.querySelector('#evl-value').innerText = `Eval Value = ${evl}`;
+    </script>
+</body>
+</html>

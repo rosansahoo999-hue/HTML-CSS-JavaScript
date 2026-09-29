@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <button onclick=" 
+    generateComputerChoice();
+    let resultMsg = getResult('Bat', computerChoice);
+    showResult('Bat', computerChoice, resultMsg)
+    ">Bat</button>
+
+    <button onclick="
+    // This will generate random number between 0 and 3.
+    generateComputerChoice();
+    resultMsg = getResult('Ball', computerChoice);
+    showResult('Ball', computerChoice, resultMsg)
+    ">Ball</button>
+
+    <button onclick="
+    // This will generate random number between 0 and 3.
+    generateComputerChoice();
+    resultMsg = getResult('Stump', computerChoice);
+    showResult('Stump', computerChoice, resultMsg);
+    ">Stump</button>
+
+    <button onclick="localStorage.clear() 
+        resetScore();
+    ">Reset</button>
+
+    <script>
+        let scoreStr = localStorage.getItem('Score');
+        let score;
+        resetScore(scoreStr);
+
+        function resetScore(scoreStr) {
+            score = scoreStr ? JSON.parse(scoreStr) : {
+                win: 0,
+                loss: 0,
+                tie: 0,
+            };
+        score.displayScore = function() {
+            return `Win: ${score.win}, Loss: ${score.loss}, Tie: ${score.tie}`;
+        };
+    };
+
+
+        let computerChoice;
+        function generateComputerChoice() {
+            // This will generate random number between 0 and 3.
+            let randomNumber = Math.random() * 3;
+            if (randomNumber > 0 && randomNumber <= 1) {
+            computerChoice = 'Bat';
+            // console.log('computerChoice is Bat');
+            } else if (randomNumber > 1 && randomNumber <= 2) {
+            computerChoice = 'Ball';
+            // console.log('computerChoice is Ball');
+            } else {
+            computerChoice = 'Stump';
+            // console.log('computerChoice is Stump');
+            }
+
+        }
+
+        function getResult(userMove, computerMove) {
+            if (userMove === 'Bat') {
+                if(computerMove === 'Ball') {
+                    score.win++;
+                    return 'User Won';
+                } else if (computerMove === 'Bat') {
+                    score.tie++;
+                    return `it's tie`;
+                } else {
+                    score.loss++;
+                    return 'Computer has Won';
+                } 
+            }
+            else if (userMove === 'Ball') {
+                if(computerMove === 'Ball') {
+                    score.tie++;
+                    return `it's tie`;
+                } else if (computerMove === 'Bat') {
+                    score.loss++;
+                    return 'Computer has Won';
+                } else if(computerMove === 'Stump') {
+                    score.win++;
+                    return 'User Won';
+                }
+            }
+            else {
+                if(computerMove === 'Ball') {
+                    score.loss++;
+                    return 'Computer has Won';
+                } else if (computerMove === 'Bat') {
+                    score.win++;
+                    return 'User Won';
+                } else if(computerMove === 'Stump') {
+                    score.tie++;
+                    return `it's tie`;
+                }
+            }
+        }
+
+            function showResult(userMove, computerMove, result) {
+                localStorage.setItem('Score', JSON.stringify(score));
+                // console.log(score);
+                alert(`You are Choosen ${userMove}. Computer Choice is ${computerMove} 
+
+                ${result}  
+                
+                ${score.displayScore()}`);
+            }
+    </script>
+</body>
+</html>

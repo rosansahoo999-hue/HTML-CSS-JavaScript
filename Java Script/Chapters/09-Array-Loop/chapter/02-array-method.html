@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array-Method</title>
+</head>
+<body>
+    <script>
+        let obj = {lkg: 98}
+        let numbers = [1, 4, 3, 7, 5, 6, 7, 2];
+        let mixed = [1, true, null, 'rosan']
+        // console.log(Array.isArray(mixed));
+        // console.log(Array.isArray(obj));
+        // console.log(numbers);
+        // console.log(numbers.length);
+        
+        // ----------------------
+        // let arr = [1, 2, 3]
+        // console.log(arr);
+        // arr.push(6);  // add last index + value
+        // console.log(arr);  
+        // console.log('popped ' + arr.pop())  // remove last index value
+        // console.log(arr);
+
+        // arr.shift();  // remove first index value.
+        // console.log(arr);  
+        // arr.unshift(5); // add first index + value.
+        // console.log(arr);  
+
+        // ----------------------------
+        // let arr = [3, 5, 7, 6]
+        // console.log(arr);
+        // arr1.splice(1, 2);  // add or remove element
+        // console.log(arr);
+
+        //------------------------------
+        // let arr = [3, 5, 7, 6]
+        // console.log(arr.toString());  // convert to string 
+
+        // -----------------------------
+        let arr = [9, 8, 5, 7, 6]
+        console.log(arr);
+        arr.sort();      // to show accessding ordered element.
+        console.log(arr); 
+        arr.valueOf();  // get array itself
+        console.log(arr);
+
+        // ------ refernce array
+        let arr2 = arr;
+        arr2[0] = 99;
+        console.log(arr2);
+
+        // destructure work and array-----------
+        let [a, b, c, d] = arr;
+        console.log(a,b,c,d);
+    </script>
+</body>
+</html>

@@ -1,9 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Practice_Set</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text & Icons Practice</title>
+
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  /* Whole page font */
+  *{
+    font-family: 'Times New Roman', Times, serif;
+  }
+  body{
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Heading centre + capitalized */
+  h1{
+    text-align: center;
+    text-transform: capitalize; /* har word ka pehla letter capital */
+    /* agar FULL CAPS chahiye to uppercase use karo */
+    margin-bottom: 30px;
+  }
+
+  /* Outer and Inner div */
+  #outer{
+    font-size: 25px;
+    background: lightblue;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    border: 2px solid black;
+  }
+  #inner{
+    font-size: 10px;
+    background: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+  }
+
+  /* Icons styling */
+  .icons{
+    margin-top: 30px;
+    font-size: 40px;
+  }
+  .icons i{
+    margin: 0 15px;
+    cursor: pointer;
+  }
+  .fa-linkedin{ color: #0077b5; }
+  .fa-github{ color: #333; }
+</style>
 </head>
 <body>
-    
+     <!-- Create an Heading at the centre and 
+make capitalized
+• Use Font family for the whole page 
+to TimeNewRoman
+• Create one div inside another div. 
+Set id and text outer to outer div, 
+set id and text inner to inner div. 
+Set outer div text size to 25px. 
+Set inner to 10px.
+• Use icons from fontawesome.com and 
+use icons of LinkedIn and GitHub -->
+
+<!-- 1. Heading centre + capitalized -->
+<h1>this is my centered capitalized heading</h1>
+
+<!-- 2 & 3. Outer and Inner Div -->
+<div id="outer">
+  Outer Div - 25px
+  <div id="inner">
+    Inner Div - 10px (ye outer ke andar hai)
+  </div>
+</div>
+
+<!-- 4. FontAwesome Icons -->
+<div class="icons">
+  <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+  <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+</div>
+
+<p>LinkedIn and GitHub Icons from fontawesome.com</p>
+
 </body>
 </html>

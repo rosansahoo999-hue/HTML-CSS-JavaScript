@@ -1,10 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>practice-exercise</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Header Footer Layout</title>
+<style>
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family: sans-serif; min-height:100vh;}
+
+  /* HEADER + NAV */
+  header{
+    background: black;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  header a{color: white; text-decoration: none;}
+
+  /* MAIN CONTENT */
+  main{
+    padding: 30px;
+    min-height: 80vh;
+    position: relative;
+  }
+
+  /* Task 1: green div 50% border radius = circle */
+  .circle{
+    width: 150px;
+    height: 150px;
+    background: green;
+    border-radius: 50%;
+    margin-bottom: 30px;
+  }
+
+  /* Task 2: Three 100px div inline-block */
+  .box{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .box1{background: red;}
+  .box2{background: blue;}
+  .box3{background: orange;}
+
+  /* Task 3: right side fixed div */
+  .fixed-right{
+    position: fixed; /* yahi scrolling pe nahi hilega */
+    right: 10px;
+    top: 50%;
+    width: 80px;
+    height: 120px;
+    background: hotpink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 10; /* upar rahega */
+  }
+
+  /* Task 4: z-index demo - ek div dusre ke upar */
+  .z-index-wrapper{
+    position: relative;
+    margin-top: 40px;
+    width: 200px;
+    height: 200px;
+  }
+  .bottom-div{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: lightgreen;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .top-div{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: purple;
+    top: 30px;
+    left: 30px;
+    z-index: 2; /* ye upar ayega */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* FOOTER */
+  footer{
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+</style>
 </head>
 <body>
-<!-- - Create a webpage with header, footer, and a 
+    <!-- - Create a webpage with header, footer, and a 
 content area. - Header- Create a nav bar with links.- Main- Create a div with width and height, 
 Background green and border radius 50%- Create Three divs with container height 
 and width 100px. Display inline block.- Set the correct position property for the 
@@ -12,5 +115,46 @@ single div element to ensure it remains at the
 right side of the page and does not shift when 
 scrolling.- Use z-index to place the div on top of 
 another div.- Footer- Add text in footer -->
+
+<header>
+  <div class="logo">My Website</div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h2>Main Content</h2>
+  
+  <!-- Green Circle -->
+  <div class="circle"></div>
+
+  <!-- Three inline-block divs -->
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+
+  <!-- Fixed right side div -->
+  <div class="fixed-right">Fixed Right</div>
+
+  <!-- z-index demo -->
+  <div class="z-index-wrapper">
+    <div class="bottom-div">Bottom z-index:1</div>
+    <div class="top-div">Top z-index:2</div>
+  </div>
+
+  <p style="margin-top:50px;">Scroll karo, pink wala right side div hilta nahi hai kyuki position: fixed hai.</p>
+  <br><br><br><br><br><br><br><br>
+</main>
+
+<footer>
+  <p>&copy; 2026 Knowledge Gate | All Rights Reserved</p>
+</footer>
+
 </body>
 </html>

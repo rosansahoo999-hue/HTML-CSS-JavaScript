@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Practice Set</title>
+<style>
+  *{margin:0; padding:0; box-sizing:border-box; font-family: sans-serif;}
+  body{padding:20px; display:flex; flex-direction:column; gap:40px;}
+
+  /* 1. NAVBAR */
+  nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: white;
+    padding: 15px 20px;
+  }
+  nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+  }
+  nav a{color:white; text-decoration:none}
+
+  /* 2. CENTER IMAGE */
+  .center-box{
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .center-box img{width: 150px;}
+
+  /* 3. 3 BOXES - 2 FIXED 1 GROW */
+  .container{
+    display: flex;
+    gap:10px;
+    border: 2px solid black;
+    padding:10px;
+  }
+  .b1, .b2{
+    width: 100px;
+    height: 100px;
+    background: crimson;
+    flex-shrink: 0;
+  }
+  .b3{
+    height: 100px;
+    background: royalblue;
+    flex-grow: 1;
+  }
+
+  /* 4. MEDIA QUERY BOX */
+  .color-box{
+    width: 50px;
+    height: 50px;
+    background-color: green;
+  }
+  @media (min-width: 300px) and (max-width: 400px){
+    .color-box{ background-color: red; }
+  }
+  @media (min-width: 400px){
+    .color-box{ background-color: blue; }
+  }
+</style>
+</head>
+<body>
+    <!-- - Create the same nav bar created in the last 
+Practice Set but do the spacing using 
+flexbox.- Use flexbox to centre an image inside a 
+div.- Create a div with three boxes where two 
+boxes have fixed size, but the third box 
+grows and shrinks with container size.- Create a div of 50px by 50px with color 
+green. It should respond to following 
+conditions:- Keep color green under 300px of view         
+port size- Change color to red from 300px to 400px- Change color to blue after 400p -->
+
+<h2>1. Navbar using Flexbox</h2>
+<nav>
+  <div>Knowledge Gate</div>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JS</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<h2>2. Center Image using Flexbox</h2>
+<div class="center-box">
+  <img src="https://via.placeholder.com/150" alt="demo">
+</div>
+
+<h2>3. Two fixed, one grow/shrink</h2>
+<div class="container">
+  <div class="b1"></div>
+  <div class="b2"></div>
+  <div class="b3"></div>
+</div>
+
+<h2>4. 50x50 Responsive Color Box</h2>
+<p>Green &lt;300px, Red 300-400px, Blue &gt;400px</p>
+<div class="color-box"></div>
+
+</body>
+</html>

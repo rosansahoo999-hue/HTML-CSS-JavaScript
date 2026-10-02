@@ -1,13 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Practice-Set</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box Model Practice</title>
+<style>
+  *{font-family: sans-serif;}
+  body{padding:20px;}
+
+  /* 1. 200px box - inspect this in DevTools */
+  .box-200{
+    height: 200px;
+    width: 200px;
+    background: lightblue;
+    border: 5px solid black;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  /* 2 & 3 & 4. Button tasks */
+  .my-btn{
+    padding: 10px 15px; /* top-bottom 10px, left-right 15px */
+    margin: 100px; /* all sides 100px */
+    border: 5px dotted red;
+    border-radius: 50%; /* circle banane ke liye */
+    background: yellow;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  /* 5. Box-sizing demo */
+  .container{
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .common{
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 10px solid black;
+  }
+  .content-box{
+    box-sizing: content-box; /* default - width ke bahar padding+border add hoga. Total = 200+40+20 = 260px */
+    background: orange;
+  }
+  .border-box{
+    box-sizing: border-box; /* width ke andar hi sab ayega. Total = 200px hi rahega */
+    background: lightgreen;
+  }
+
+  .note{
+    margin-top: 10px;
+    background: #eee;
+    padding: 10px;
+    border-left: 4px solid black;
+  }
+</style>
 </head>
 <body>
-    <!-- Create a div with height and width 200px and observe different values in the box model by inspecting. 
-    - Create a button and give 10px padding to top and bottom and 15px on the sides.
-    - Add 100px margin to the button on all sides.
-    - Add dotter border with color red and so much that the button becomes a circle.
-    - Create two boxes with different box-sizing values and observe changes in box model -->
+
+<h2>1. 200px Box - Inspect karo</h2>
+<div class="box-200">200x200 Box</div>
+<div class="note">Right Click > Inspect > Box Model dekho - Content 200px, + Padding 20px, + Border 5px, + Margin 20px</div>
+
+<h2>2,3,4. Button Task</h2>
+<button class="my-btn">Click Me</button>
+<div class="note">padding: 10px 15px, margin: 100px, border: dotted red, border-radius: 50% = circle</div>
+
+<h2>5. Box-Sizing Difference</h2>
+<div class="container">
+  <div>
+    <div class="common content-box">content-box</div>
+    <p><b>content-box (default)</b><br>Total width = 260px</p>
+  </div>
+  <div>
+    <div class="common border-box">border-box</div>
+    <p><b>border-box</b><br>Total width = 200px</p>
+  </div>
+</div>
+
+<div class="note">
+  Inspect karke dekho:<br>
+  <b>content-box</b> me 200px sirf content hai, padding/border extra jodta hai.<br>
+  <b>border-box</b> me 200px ke andar hi padding/border adjust ho jata hai - yahi hum real project me use karte hain.
+</div>
+
 </body>
 </html>

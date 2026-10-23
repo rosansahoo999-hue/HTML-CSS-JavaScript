@@ -1,29 +1,26 @@
 
 import React from 'react';
 import './App.css'
+import FoodItems from './components/FoodItems';
+import ErrorMessage from './components/ErrorMessage';
 
 function App() {
 
-  let foodItems = [];
-  // let foodItems = ['Dal', 'Green Vegetable', 'Roti', 'Salad', 'Milk', 'Ghee']; 
+  // let foodItems = [];
+  let foodItems = ['Sabzi', 'Green Vegetable', 'Roti', 'Salad', 'Milk', 'Ghee']; 
 
   // if (foodItems.length === 0){
   //   return <h3>I am Still hungry.</h3>
   // }
 
-  let emptyMessage = foodItems.length === 0 ?  <h3>I am Still hungry.</h3> : null
-  let logicalMessage = foodItems.length === 0 && <h3>I am Still hungry.</h3>
+  // let emptyMessage = foodItems.length === 0 ?  <h3>I am Still hungry.</h3> : null
+  
 
   return ( 
   <React.Fragment>
       <h1>Healthy Food</h1>
-      {emptyMessage}
-      {logicalMessage}
-      <ul className="list-group">
-        {foodItems.map((item) => (
-          <li key={item} className="list-group-item">{item}</li>
-        ))}
-      </ul>
+      <ErrorMessage items={foodItems} />
+      <FoodItems items={foodItems} />
     </React.Fragment>
   )
 }

@@ -1,9 +1,12 @@
+import styles from "./Item.module.css";
 
 const Item = (props) => {
 
     let {foodItems} = props;
     return ( 
-    <li className="list-group-item">{foodItems}</li>
+    <li className={`${styles['kg-item']} list-group-item`}>
+        <span className={styles['kg-span']}>{foodItems}</span>
+    </li>
     )
 }
 

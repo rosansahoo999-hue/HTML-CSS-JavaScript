@@ -8,7 +8,7 @@ const FoodItems = ({ items }) => {
     let onBuyButton = (item, event) => {
         let newItems = [...activeItems, item];
         setActiveItems(newItems);
-    };
+    }; 
     
     return (
         <ul className="list-group">
